@@ -1,0 +1,2 @@
+Name: hval
+Main-Class: hval.Hval
