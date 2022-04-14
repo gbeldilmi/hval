@@ -1,2 +1,4 @@
 Name: hval
+Implementation-Version: 
 Main-Class: hval.Hval
+Class-Path: lib/julya.jar
