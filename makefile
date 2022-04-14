@@ -6,7 +6,9 @@ JAR_FILE            := $(PROJECT_NAME).jar
 MANIFEST_FILE       := manifest.mf
 JAVA_FILES          := $(shell find $(PROJECT_NAME)/ -type f -name '*.java')
 CLASS_FILES         := $(JAVA_FILES:%.java=%.class)
-COMPILER_FLAGS      := -Xlint
+LIBRARY_DIR         := lib
+CLASSPATH           := -classpath .:$(LIBRARY_DIR)/julya.jar
+COMPILER_FLAGS      := -Xlint $(CLASSPATH)
 
 #------------------------------------------------------------------------------#
 # Commands                                                                     #
@@ -14,7 +16,7 @@ COMPILER_FLAGS      := -Xlint
 .PHONY : all, run, clean
 all :
 	javac $(COMPILER_FLAGS) $(JAVA_FILES)
-	jar cfmv $(JAR_FILE) $(MANIFEST_FILE) $(CLASS_FILES)
+	jar cfmv $(JAR_FILE) $(MANIFEST_FILE) $(CLASS_FILES) $(LIBRARY_DIR)/
 run : all
 	java -jar $(JAR_FILE)
 clean :
