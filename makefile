@@ -9,6 +9,7 @@ CLASS_FILES         := $(JAVA_FILES:%.java=%.class)
 LIBRARY_DIR         := lib
 CLASSPATH           := -classpath .:$(LIBRARY_DIR)/julya.jar
 COMPILER_FLAGS      := -Xlint $(CLASSPATH)
+RUN_ARGS						:= 
 
 #------------------------------------------------------------------------------#
 # Commands                                                                     #
@@ -18,6 +19,6 @@ all :
 	javac $(COMPILER_FLAGS) $(JAVA_FILES)
 	jar cfmv $(JAR_FILE) $(MANIFEST_FILE) $(CLASS_FILES) $(LIBRARY_DIR)/
 run : all
-	java -jar $(JAR_FILE)
+	java -jar $(JAR_FILE) $(RUN_ARGS)
 clean :
 	rm -v $(JAR_FILE) $(CLASS_FILES)
