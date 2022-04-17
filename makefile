@@ -9,7 +9,7 @@ CLASS_FILES         := $(JAVA_FILES:%.java=%.class)
 LIBRARY_DIR         := lib
 CLASSPATH           := -classpath .:$(LIBRARY_DIR)/julya.jar
 COMPILER_FLAGS      := -Xlint $(CLASSPATH)
-RUN_ARGS						:= 
+RUN_ARGS            := 
 
 #------------------------------------------------------------------------------#
 # Commands                                                                     #
